@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"localhostTest/go-Call/call"
-	"localhostTest/go-Call/test"
+	"github.com/wangyaofenghist/go-Callghist/go-Call/call"
+	"github.com/wangyaofenghist/go-Callghist/go-Call/test"
 )
 
 func main() {
