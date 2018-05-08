@@ -62,7 +62,6 @@ func (f *runWorker) Run(param []interface{}) {
 
 //主函数
 func main() {
-   var resultChan = make(chan interface{})
    var runFunc runWorker = runWorker{}
    funcs.AddCall("test4", test.Test4)
    var startTime = time.Now().UnixNano()
@@ -90,7 +89,8 @@ func main() {
    fmt.Println(lastTime - endTime)
 
    fmt.Println(startTime, modTime, endTime)
+   time.Sleep(time.Millisecond * 1000)
    poolOne.Stop()
-   <-resultChan
+   
 }
 ```
