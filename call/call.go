@@ -15,7 +15,7 @@ func CreateCall() CallMap {
 }
 
 //添加一个回调 重复绑定 将会替换
-func (call CallMap) AddCall(name string, param Params) (err error) {
+func (call CallMap) AddCall(name string, param interface{}) (err error) {
 	if _, ok := call[name]; !ok {
 		call[name] = param
 	}
@@ -31,13 +31,13 @@ func (call CallMap) RemoveCall(name string) {
 }
 
 //替换
-func (call CallMap) ReplaceCall(name string, param Params) {
+func (call CallMap) ReplaceCall(name string, param interface{}) {
 	call[name] = param
 	return
 }
 
 //调用回调
-func (call CallMap) Call(name string, param ...Params) (result []reflect.Value, err error) {
+func (call CallMap) Call(name string, param ...interface{}) (result []reflect.Value, err error) {
 	if _, ok := call[name]; !ok {
 		err = errors.New("name:" + name + " is not find.")
 		return
