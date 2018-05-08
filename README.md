@@ -20,6 +20,8 @@ result2, _ := call.Call("test4", "hello ", "world") //调用回调并传输参�
 
 可以在协程数可控的情况下实现，方便的实现业务并发执行
 
+go-worker-base 地址：https://github.com/wangyaofenghist/go-worker-base
+
 ```
 package main
 
