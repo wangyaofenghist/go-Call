@@ -11,7 +11,9 @@ func main() {
 	call.AddCall("test1", test.Test1)
 	call.AddCall("test4", test.Test4)
 	call.ReplaceCall("test1", test.Test1)
-	call.ReplaceCall("call", call.Call)
+	call.AddCall("Test5", test.Hi5)
+	resultT, _ := call.Call("Test5", 2, 3)
+	fmt.Println(resultT[0])
 
 	s := "test1"
 	result1, err := call.Call(s)
@@ -22,7 +24,6 @@ func main() {
 
 	result1, err = call.Call(s)
 	fmt.Println(result1, err)
-	result3, err = call.Call("call", "test4", "hello 2", "world 2")
 	fmt.Println(result3, err, 2222)
 	//会报错
 	/*call.ReplaceCall("test4", "test.Test4")
